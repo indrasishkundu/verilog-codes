@@ -1,10 +1,10 @@
-module ALU(x,y,z,sign,zero,carry,parity,overflow);
-	input[15:0]x,y;
-	output[15:0]z;
+module ALU(X,Y,Z,sign,zero,carry,parity,overflow);
+	input[15:0]X,Y;
+	output[15:0]Z;
 	output sign,zero,carry,parity,overflow;
-	assign{carry,z}=x+y;
-	assign sign=z[15];
-	assign zero=~|z;
-	assign parity=~^z;
-	assign overflow=((x[15]&y[15]&~[15])|(~x[15]&~y[15]&z[15]))
+	assign{carry,Z}=X+Y;
+	assign sign=Z[15];
+	assign zero=~|Z;
+	assign parity=~^Z;
+	assign overflow=((X[15]&Y[15]&~Z[15])|(~X[15]&~Y[15]&Z[15]));
 endmodule
