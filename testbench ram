@@ -1,0 +1,25 @@
+module ram;
+reg[9:0] address;
+reg[7:0]data_in;
+reg wr,cs;
+integer k;
+integer s;
+wire[7:0] data_out;
+my_ram(data_in,data-out,address,wr,cs);
+initial
+begin
+for(k=0;k<=1023;k++)
+begin
+data-in=(k+k)%256;
+wr=1;
+cs=1;
+#2 address=k;wr=0;cs=0;
+end
+repeat(20)
+begin
+#2 address=$random(s)%1024;
+display("ADDRESS=%5d,Data=%4d",address,mem[address]);
+end
+initial s=35;
+end 
+end module
