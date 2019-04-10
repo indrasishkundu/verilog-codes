@@ -5,7 +5,7 @@ reg wr,cs;
 integer k;
 integer s;
 wire[7:0] data_out;
-my_ram(data_in,data-out,address,wr,cs);
+my_ram(data_in,data_out,address,wr,cs);
 initial
 begin
 for(k=0;k<=1023;k++)
